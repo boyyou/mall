@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.product.dao.SkuSaleAttrValueDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.product.api.entity.SkuSaleAttrValueEntity" id="skuSaleAttrValueMap">
+        <result property="id" column="id"/>
+        <result property="skuId" column="skuId"/>
+        <result property="attrId" column="attrId"/>
+        <result property="attrName" column="attrName"/>
+        <result property="attrValue" column="attrValue"/>
+        <result property="attrSort" column="attrSort"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            sku_id AS skuId,
+            attr_id AS attrId,
+            attr_name AS attrName,
+            attr_value AS attrValue,
+            attr_sort AS attrSort,
+            del_flag AS delFlag
+            </sql>
+</mapper>

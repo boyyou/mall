@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.member.dao.MemberDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.member.api.entity.MemberEntity" id="memberMap">
+        <result property="id" column="id"/>
+        <result property="levelId" column="levelId"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="nickname" column="nickname"/>
+        <result property="mobile" column="mobile"/>
+        <result property="email" column="email"/>
+        <result property="header" column="header"/>
+        <result property="gender" column="gender"/>
+        <result property="birth" column="birth"/>
+        <result property="city" column="city"/>
+        <result property="job" column="job"/>
+        <result property="sign" column="sign"/>
+        <result property="sourceType" column="sourceType"/>
+        <result property="integration" column="integration"/>
+        <result property="growth" column="growth"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="createTime"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            level_id AS levelId,
+            username,
+            password,
+            nickname,
+            mobile,
+            email,
+            header,
+            gender,
+            birth,
+            city,
+            job,
+            sign,
+            source_type AS sourceType,
+            integration,
+            growth,
+            status,
+            create_time AS createTime,
+            del_flag AS delFlag
+            </sql>
+</mapper>

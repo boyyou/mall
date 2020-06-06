@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://127.0.0.1:3306/hjht_pms?setUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8&allowMultiQueries=true
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    #配置如果返回的数据中有属性值是空的话不返回-直接在结果里面没有这个为空的属性，non_null是这个值为null才过滤，如果字符串是""数组是[]
+    #他们都是空的但不是null不能过滤掉，配置成non_empty的话这两种情况的值都会将属性过滤掉
+    default-property-inclusion: non_empty
+    date-format: "yyyy-MM-dd HH:mm:ss"
+    time-zone: "GMT+8"
+  redis:
+    host: 127.0.0.1
+    port: 3306
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  #配置每张表的主键自增，需要在主键字段上注解@TableId
+  global-config:
+    db-config:
+      id-type: auto
+      #配置表示逻辑删除的值，默认有该配置，可以不写，前提是表示你的逻辑删除的字段的值需要和这个对应即0正常，1删除需在对应表示逻辑删除的字段上加注解@TableLogic
+      #如果全局统一标识逻辑删除的字段的话可以进行以下配置，就不用每张表的逻辑删除字段加@TableLogic注解,这个配置mybatisplus3.3之后才有
+      #logic-delete-field: del_flag,貌似配了没用还是需要@TableLogic，暂时注释
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+logging:
+  level:
+    com.hjht.mall: debug

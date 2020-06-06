@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.product.dao.SpuCommentDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.product.api.entity.SpuCommentEntity" id="spuCommentMap">
+        <result property="id" column="id"/>
+        <result property="skuId" column="skuId"/>
+        <result property="spuId" column="spuId"/>
+        <result property="spuName" column="spuName"/>
+        <result property="memberNickName" column="memberNickName"/>
+        <result property="star" column="star"/>
+        <result property="memberIp" column="memberIp"/>
+        <result property="createTime" column="createTime"/>
+        <result property="showStatus" column="showStatus"/>
+        <result property="spuAttributes" column="spuAttributes"/>
+        <result property="likesCount" column="likesCount"/>
+        <result property="replyCount" column="replyCount"/>
+        <result property="resources" column="resources"/>
+        <result property="content" column="content"/>
+        <result property="memberIcon" column="memberIcon"/>
+        <result property="commentType" column="commentType"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            sku_id AS skuId,
+            spu_id AS spuId,
+            spu_name AS spuName,
+            member_nick_name AS memberNickName,
+            star,
+            member_ip AS memberIp,
+            create_time AS createTime,
+            show_status AS showStatus,
+            spu_attributes AS spuAttributes,
+            likes_count AS likesCount,
+            reply_count AS replyCount,
+            resources,
+            content,
+            member_icon AS memberIcon,
+            comment_type AS commentType,
+            del_flag AS delFlag
+            </sql>
+</mapper>

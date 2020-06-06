@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.member.dao.MemberCollectSubjectDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.member.api.entity.MemberCollectSubjectEntity" id="memberCollectSubjectMap">
+        <result property="id" column="id"/>
+        <result property="subjectId" column="subjectId"/>
+        <result property="subjectName" column="subjectName"/>
+        <result property="subjectImg" column="subjectImg"/>
+        <result property="subjectUrll" column="subjectUrll"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            subject_id AS subjectId,
+            subject_name AS subjectName,
+            subject_img AS subjectImg,
+            subject_urll AS subjectUrll,
+            del_flag AS delFlag
+            </sql>
+</mapper>

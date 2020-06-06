@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.coupon.dao.CouponDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.coupon.api.entity.CouponEntity" id="couponMap">
+        <result property="id" column="id"/>
+        <result property="couponType" column="couponType"/>
+        <result property="couponImg" column="couponImg"/>
+        <result property="couponName" column="couponName"/>
+        <result property="num" column="num"/>
+        <result property="amount" column="amount"/>
+        <result property="perLimit" column="perLimit"/>
+        <result property="minPoint" column="minPoint"/>
+        <result property="startTime" column="startTime"/>
+        <result property="endTime" column="endTime"/>
+        <result property="useType" column="useType"/>
+        <result property="note" column="note"/>
+        <result property="publishCount" column="publishCount"/>
+        <result property="useCount" column="useCount"/>
+        <result property="receiveCount" column="receiveCount"/>
+        <result property="enableStartTime" column="enableStartTime"/>
+        <result property="enableEndTime" column="enableEndTime"/>
+        <result property="code" column="code"/>
+        <result property="memberLevel" column="memberLevel"/>
+        <result property="publish" column="publish"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            coupon_type AS couponType,
+            coupon_img AS couponImg,
+            coupon_name AS couponName,
+            num,
+            amount,
+            per_limit AS perLimit,
+            min_point AS minPoint,
+            start_time AS startTime,
+            end_time AS endTime,
+            use_type AS useType,
+            note,
+            publish_count AS publishCount,
+            use_count AS useCount,
+            receive_count AS receiveCount,
+            enable_start_time AS enableStartTime,
+            enable_end_time AS enableEndTime,
+            code,
+            member_level AS memberLevel,
+            publish,
+            del_flag AS delFlag
+            </sql>
+</mapper>

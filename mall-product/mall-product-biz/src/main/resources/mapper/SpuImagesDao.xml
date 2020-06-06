@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.product.dao.SpuImagesDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.product.api.entity.SpuImagesEntity" id="spuImagesMap">
+        <result property="id" column="id"/>
+        <result property="spuId" column="spuId"/>
+        <result property="imgName" column="imgName"/>
+        <result property="imgUrl" column="imgUrl"/>
+        <result property="imgSort" column="imgSort"/>
+        <result property="defaultImg" column="defaultImg"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            spu_id AS spuId,
+            img_name AS imgName,
+            img_url AS imgUrl,
+            img_sort AS imgSort,
+            default_img AS defaultImg,
+            del_flag AS delFlag
+            </sql>
+</mapper>

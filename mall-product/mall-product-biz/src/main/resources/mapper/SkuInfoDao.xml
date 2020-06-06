@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.product.dao.SkuInfoDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.product.api.entity.SkuInfoEntity" id="skuInfoMap">
+        <result property="skuId" column="skuId"/>
+        <result property="spuId" column="spuId"/>
+        <result property="skuName" column="skuName"/>
+        <result property="skuDesc" column="skuDesc"/>
+        <result property="catalogId" column="catalogId"/>
+        <result property="brandId" column="brandId"/>
+        <result property="skuDefaultImg" column="skuDefaultImg"/>
+        <result property="skuTitle" column="skuTitle"/>
+        <result property="skuSubtitle" column="skuSubtitle"/>
+        <result property="price" column="price"/>
+        <result property="saleCount" column="saleCount"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            sku_id AS skuId,
+            spu_id AS spuId,
+            sku_name AS skuName,
+            sku_desc AS skuDesc,
+            catalog_id AS catalogId,
+            brand_id AS brandId,
+            sku_default_img AS skuDefaultImg,
+            sku_title AS skuTitle,
+            sku_subtitle AS skuSubtitle,
+            price,
+            sale_count AS saleCount,
+            del_flag AS delFlag
+            </sql>
+</mapper>

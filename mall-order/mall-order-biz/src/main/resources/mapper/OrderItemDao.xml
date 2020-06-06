@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.order.dao.OrderItemDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.order.api.entity.OrderItemEntity" id="orderItemMap">
+        <result property="id" column="id"/>
+        <result property="orderId" column="orderId"/>
+        <result property="orderSn" column="orderSn"/>
+        <result property="spuId" column="spuId"/>
+        <result property="spuName" column="spuName"/>
+        <result property="spuPic" column="spuPic"/>
+        <result property="spuBrand" column="spuBrand"/>
+        <result property="categoryId" column="categoryId"/>
+        <result property="skuId" column="skuId"/>
+        <result property="skuName" column="skuName"/>
+        <result property="skuPic" column="skuPic"/>
+        <result property="skuPrice" column="skuPrice"/>
+        <result property="skuQuantity" column="skuQuantity"/>
+        <result property="skuAttrsVals" column="skuAttrsVals"/>
+        <result property="promotionAmount" column="promotionAmount"/>
+        <result property="couponAmount" column="couponAmount"/>
+        <result property="integrationAmount" column="integrationAmount"/>
+        <result property="realAmount" column="realAmount"/>
+        <result property="giftIntegration" column="giftIntegration"/>
+        <result property="giftGrowth" column="giftGrowth"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            order_id AS orderId,
+            order_sn AS orderSn,
+            spu_id AS spuId,
+            spu_name AS spuName,
+            spu_pic AS spuPic,
+            spu_brand AS spuBrand,
+            category_id AS categoryId,
+            sku_id AS skuId,
+            sku_name AS skuName,
+            sku_pic AS skuPic,
+            sku_price AS skuPrice,
+            sku_quantity AS skuQuantity,
+            sku_attrs_vals AS skuAttrsVals,
+            promotion_amount AS promotionAmount,
+            coupon_amount AS couponAmount,
+            integration_amount AS integrationAmount,
+            real_amount AS realAmount,
+            gift_integration AS giftIntegration,
+            gift_growth AS giftGrowth,
+            del_flag AS delFlag
+            </sql>
+</mapper>

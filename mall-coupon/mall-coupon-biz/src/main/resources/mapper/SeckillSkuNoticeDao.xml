@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.coupon.dao.SeckillSkuNoticeDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.coupon.api.entity.SeckillSkuNoticeEntity" id="seckillSkuNoticeMap">
+        <result property="id" column="id"/>
+        <result property="memberId" column="memberId"/>
+        <result property="skuId" column="skuId"/>
+        <result property="sessionId" column="sessionId"/>
+        <result property="subcribeTime" column="subcribeTime"/>
+        <result property="sendTime" column="sendTime"/>
+        <result property="noticeType" column="noticeType"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            member_id AS memberId,
+            sku_id AS skuId,
+            session_id AS sessionId,
+            subcribe_time AS subcribeTime,
+            send_time AS sendTime,
+            notice_type AS noticeType,
+            del_flag AS delFlag
+            </sql>
+</mapper>

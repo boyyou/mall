@@ -1,0 +1,49 @@
+package ${package}.${moduleName}.entity;
+
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
+import com.baomidou.mybatisplus.annotation.TableName;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
+#if(${hasBigDecimal})
+import java.math.BigDecimal;
+#end
+#if(${hasDate})
+import com.alibaba.fastjson.annotation.JSONField;
+#end
+import java.io.Serializable;
+import java.util.Date;
+import lombok.Data;
+
+/**
+ * ${comments}
+ * 
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@Data
+@TableName("${tableName}")
+@ApiModel("${comments}")
+public class ${className}Entity implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+#foreach ($column in $columns)
+	/**
+	 * $column.comments
+	 */
+	#if($column.columnName == $pk.columnName)
+@TableId
+	#end
+	#if($column.columnName == "del_flag")
+@TableLogic
+	#end
+	#if($column.attrType == "Date")
+@JSONField(format = "yyyy-MM-dd HH:mm:ss")
+	#end
+@ApiModelProperty("$column.comments")
+	private $column.attrType $column.attrname;
+#end
+
+}

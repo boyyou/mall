@@ -1,0 +1,97 @@
+package ${package}.${moduleName}.controller;
+
+import java.util.Arrays;
+import java.util.Map;
+
+//import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
+import ${package}.${moduleName}.api.entity.${className}Entity;
+import ${package}.${moduleName}.service.${className}Service;
+import ${mainPath}.common.utils.PageUtils;
+import ${mainPath}.common.utils.R;
+
+
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+@RestController
+@RequestMapping("${moduleName}/${pathName}")
+@Api(value = "${comments}控制器", tags = {"${comments}控制器"})
+public class ${className}Controller {
+    @Autowired
+    private ${className}Service ${classname}Service;
+
+    /**
+     * ${comments}列表查询
+     */
+    @GetMapping("/list")
+    @ApiOperation(value = "${comments}列表查询", notes = "${comments}列表查询")
+    //@RequiresPermissions("${moduleName}:${pathName}:list")
+    public R<List<${className}Entity>> list(@RequestParam Map<String, Object> params){
+        PageUtils page = ${classname}Service.queryPage(params);
+        return R.ok(page);
+    }
+
+
+    /**
+     * ${comments}详情查询
+     */
+    @GetMapping("/info/{${pk.attrname}}")
+    @ApiOperation(value = "${comments}详情查询", notes = "${comments}详情查询")
+    //@RequiresPermissions("${moduleName}:${pathName}:info")
+    public R<${className}Entity> info(@PathVariable("${pk.attrname}") ${pk.attrType} ${pk.attrname}){
+		${className}Entity ${classname} = ${classname}Service.getById(${pk.attrname});
+        return R.ok(${classname});
+    }
+
+    /**
+     * ${comments}保存
+     */
+    @PostMapping("/save")
+    @ApiOperation(value = "${comments}保存", notes = "${comments}保存")
+    //@RequiresPermissions("${moduleName}:${pathName}:save")
+    public R save(@RequestBody ${className}Entity ${classname}){
+        Object result = ${classname}Service.save${className}(${classname});
+        if (result instanceof Boolean){
+            return R.ok();
+        }else {
+            return R.fail(result.toString());
+        }
+    }
+
+    /**
+     * ${comments}修改
+     */
+    @PostMapping("/update")
+    @ApiOperation(value = "${comments}修改", notes = "${comments}修改")
+    //@RequiresPermissions("${moduleName}:${pathName}:update")
+    public R update(@RequestBody ${className}Entity ${classname}){
+		${classname}Service.updateById(${classname});
+        return R.ok();
+    }
+
+    /**
+     * ${comments}逻辑删除
+     */
+    @PostMapping("/delete")
+    @ApiOperation(value = "${comments}逻辑删除", notes = "${comments}逻辑删除")
+    //@RequiresPermissions("${moduleName}:${pathName}:delete")
+    public R delete(@RequestBody ${pk.attrType}[] ${pk.attrname}s){
+        Object result = ${classname}Service.deleteBath${className}(Arrays.asList(${pk.attrname}s));
+        if (result instanceof Boolean){
+            return R.ok();
+        }else {
+            return R.fail(result.toString());
+        }
+    }
+
+}

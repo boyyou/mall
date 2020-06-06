@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.coupon.dao.MemberPriceDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.coupon.api.entity.MemberPriceEntity" id="memberPriceMap">
+        <result property="id" column="id"/>
+        <result property="skuId" column="skuId"/>
+        <result property="memberLevelId" column="memberLevelId"/>
+        <result property="memberLevelName" column="memberLevelName"/>
+        <result property="memberPrice" column="memberPrice"/>
+        <result property="addOther" column="addOther"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            sku_id AS skuId,
+            member_level_id AS memberLevelId,
+            member_level_name AS memberLevelName,
+            member_price AS memberPrice,
+            add_other AS addOther,
+            del_flag AS delFlag
+            </sql>
+</mapper>

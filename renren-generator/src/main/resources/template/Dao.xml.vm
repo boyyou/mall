@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="${package}.${moduleName}.dao.${className}Dao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="${package}.${moduleName}.api.entity.${className}Entity" id="${classname}Map">
+#foreach($column in $columns)
+        <result property="${column.attrname}" column="${column.attrname}"/>
+#end
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+        #foreach ($column in $columns)
+    #if(${column.columnName} == ${column.attrname})${column.columnName}#else${column.columnName} AS ${column.attrname}#end,
+        #end
+    </sql>
+</mapper>

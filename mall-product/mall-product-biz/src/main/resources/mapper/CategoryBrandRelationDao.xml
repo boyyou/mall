@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.product.dao.CategoryBrandRelationDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.product.api.entity.CategoryBrandRelationEntity" id="categoryBrandRelationMap">
+        <result property="id" column="id"/>
+        <result property="brandId" column="brandId"/>
+        <result property="catelogId" column="catelogId"/>
+        <result property="brandName" column="brandName"/>
+        <result property="catelogName" column="catelogName"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            brand_id AS brandId,
+            catelog_id AS catelogId,
+            brand_name AS brandName,
+            catelog_name AS catelogName,
+            del_flag AS delFlag
+            </sql>
+</mapper>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.member.dao.MemberReceiveAddressDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.member.api.entity.MemberReceiveAddressEntity" id="memberReceiveAddressMap">
+        <result property="id" column="id"/>
+        <result property="memberId" column="memberId"/>
+        <result property="name" column="name"/>
+        <result property="phone" column="phone"/>
+        <result property="postCode" column="postCode"/>
+        <result property="province" column="province"/>
+        <result property="city" column="city"/>
+        <result property="region" column="region"/>
+        <result property="detailAddress" column="detailAddress"/>
+        <result property="areacode" column="areacode"/>
+        <result property="defaultStatus" column="defaultStatus"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            member_id AS memberId,
+            name,
+            phone,
+            post_code AS postCode,
+            province,
+            city,
+            region,
+            detail_address AS detailAddress,
+            areacode,
+            default_status AS defaultStatus,
+            del_flag AS delFlag
+            </sql>
+</mapper>

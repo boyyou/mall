@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.coupon.dao.CouponHistoryDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.coupon.api.entity.CouponHistoryEntity" id="couponHistoryMap">
+        <result property="id" column="id"/>
+        <result property="couponId" column="couponId"/>
+        <result property="memberId" column="memberId"/>
+        <result property="memberNickName" column="memberNickName"/>
+        <result property="getType" column="getType"/>
+        <result property="createTime" column="createTime"/>
+        <result property="useType" column="useType"/>
+        <result property="useTime" column="useTime"/>
+        <result property="orderId" column="orderId"/>
+        <result property="orderSn" column="orderSn"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            coupon_id AS couponId,
+            member_id AS memberId,
+            member_nick_name AS memberNickName,
+            get_type AS getType,
+            create_time AS createTime,
+            use_type AS useType,
+            use_time AS useTime,
+            order_id AS orderId,
+            order_sn AS orderSn,
+            del_flag AS delFlag
+            </sql>
+</mapper>

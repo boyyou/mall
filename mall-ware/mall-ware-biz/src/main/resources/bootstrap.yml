@@ -1,0 +1,13 @@
+server:
+  port: 11000
+spring:
+  application:
+    name: mall-ware
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yml
+        shared-dataids: mall-ware.${spring.cloud.nacos.config.file-extension}

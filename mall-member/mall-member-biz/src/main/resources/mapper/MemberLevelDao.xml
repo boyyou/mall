@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.member.dao.MemberLevelDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.member.api.entity.MemberLevelEntity" id="memberLevelMap">
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="growthPoint" column="growthPoint"/>
+        <result property="defaultStatus" column="defaultStatus"/>
+        <result property="freeFreightPoint" column="freeFreightPoint"/>
+        <result property="commentGrowthPoint" column="commentGrowthPoint"/>
+        <result property="priviledgeFreeFreight" column="priviledgeFreeFreight"/>
+        <result property="priviledgeMemberPrice" column="priviledgeMemberPrice"/>
+        <result property="priviledgeBirthday" column="priviledgeBirthday"/>
+        <result property="note" column="note"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            name,
+            growth_point AS growthPoint,
+            default_status AS defaultStatus,
+            free_freight_point AS freeFreightPoint,
+            comment_growth_point AS commentGrowthPoint,
+            priviledge_free_freight AS priviledgeFreeFreight,
+            priviledge_member_price AS priviledgeMemberPrice,
+            priviledge_birthday AS priviledgeBirthday,
+            note,
+            del_flag AS delFlag
+            </sql>
+</mapper>

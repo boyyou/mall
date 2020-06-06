@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.hjht.common.exception.GlobalExceptionHandlerResolver,\
+  com.hjht.common.utils.MemberUtil,\
+  com.hjht.common.config.HjhtMallSessionConfig,\
+  com.hjht.common.config.MybatisPlusConfig
+  
+  # com.hjht.common.jwt.InterceptConfig

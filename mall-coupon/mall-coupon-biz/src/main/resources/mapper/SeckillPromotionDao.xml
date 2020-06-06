@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.coupon.dao.SeckillPromotionDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.coupon.api.entity.SeckillPromotionEntity" id="seckillPromotionMap">
+        <result property="id" column="id"/>
+        <result property="title" column="title"/>
+        <result property="startTime" column="startTime"/>
+        <result property="endTime" column="endTime"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="createTime"/>
+        <result property="userId" column="userId"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            title,
+            start_time AS startTime,
+            end_time AS endTime,
+            status,
+            create_time AS createTime,
+            user_id AS userId,
+            del_flag AS delFlag
+            </sql>
+</mapper>

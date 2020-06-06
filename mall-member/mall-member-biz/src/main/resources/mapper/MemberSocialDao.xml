@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.member.dao.MemberSocialDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.member.api.entity.MemberSocialEntity" id="memberSocialMap">
+        <result property="id" column="id"/>
+        <result property="memberId" column="memberId"/>
+        <result property="type" column="type"/>
+        <result property="unionId" column="unionId"/>
+        <result property="onlyId" column="onlyId"/>
+        <result property="nick" column="nick"/>
+        <result property="headUrl" column="headUrl"/>
+        <result property="sex" column="sex"/>
+        <result property="country" column="country"/>
+        <result property="province" column="province"/>
+        <result property="city" column="city"/>
+        <result property="status" column="status"/>
+        <result property="createTime" column="createTime"/>
+        <result property="updateTime" column="updateTime"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            member_id AS memberId,
+            type,
+            union_id AS unionId,
+            only_id AS onlyId,
+            nick,
+            head_url AS headUrl,
+            sex,
+            country,
+            province,
+            city,
+            status,
+            create_time AS createTime,
+            update_time AS updateTime,
+            del_flag AS delFlag
+            </sql>
+</mapper>

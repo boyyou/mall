@@ -1,0 +1,35 @@
+package ${package}.${moduleName}.service;
+
+import com.baomidou.mybatisplus.extension.service.IService;
+import ${mainPath}.common.utils.PageUtils;
+import ${package}.${moduleName}.api.entity.${className}Entity;
+
+import java.util.Map;
+import java.util.List;
+
+/**
+ * ${comments}
+ *
+ * @author ${author}
+ * @email ${email}
+ * @date ${datetime}
+ */
+public interface ${className}Service extends IService<${className}Entity> {
+
+    PageUtils queryPage(Map<String, Object> params);
+
+    /**
+     * 保存${comments}
+     * @param  ${classname}Entity
+     * @return
+     */
+    Object save${className}(${className}Entity ${classname}Entity);
+
+    /**
+     * 批量删除${comments}
+     * @param ${pk.attrname}s
+     * @return
+     */
+    Object deleteBath${className}(List<${pk.attrType}> ${pk.attrname}s);
+}
+

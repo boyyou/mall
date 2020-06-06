@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.coupon.dao.SeckillSkuRelationDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.coupon.api.entity.SeckillSkuRelationEntity" id="seckillSkuRelationMap">
+        <result property="id" column="id"/>
+        <result property="promotionId" column="promotionId"/>
+        <result property="promotionSessionId" column="promotionSessionId"/>
+        <result property="skuId" column="skuId"/>
+        <result property="seckillPrice" column="seckillPrice"/>
+        <result property="seckillCount" column="seckillCount"/>
+        <result property="seckillLimit" column="seckillLimit"/>
+        <result property="seckillSort" column="seckillSort"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            promotion_id AS promotionId,
+            promotion_session_id AS promotionSessionId,
+            sku_id AS skuId,
+            seckill_price AS seckillPrice,
+            seckill_count AS seckillCount,
+            seckill_limit AS seckillLimit,
+            seckill_sort AS seckillSort,
+            del_flag AS delFlag
+            </sql>
+</mapper>

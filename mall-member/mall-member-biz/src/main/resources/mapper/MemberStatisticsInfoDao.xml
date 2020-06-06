@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.member.dao.MemberStatisticsInfoDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.member.api.entity.MemberStatisticsInfoEntity" id="memberStatisticsInfoMap">
+        <result property="id" column="id"/>
+        <result property="memberId" column="memberId"/>
+        <result property="consumeAmount" column="consumeAmount"/>
+        <result property="couponAmount" column="couponAmount"/>
+        <result property="orderCount" column="orderCount"/>
+        <result property="couponCount" column="couponCount"/>
+        <result property="commentCount" column="commentCount"/>
+        <result property="returnOrderCount" column="returnOrderCount"/>
+        <result property="loginCount" column="loginCount"/>
+        <result property="attendCount" column="attendCount"/>
+        <result property="fansCount" column="fansCount"/>
+        <result property="collectProductCount" column="collectProductCount"/>
+        <result property="collectSubjectCount" column="collectSubjectCount"/>
+        <result property="collectCommentCount" column="collectCommentCount"/>
+        <result property="inviteFriendCount" column="inviteFriendCount"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            member_id AS memberId,
+            consume_amount AS consumeAmount,
+            coupon_amount AS couponAmount,
+            order_count AS orderCount,
+            coupon_count AS couponCount,
+            comment_count AS commentCount,
+            return_order_count AS returnOrderCount,
+            login_count AS loginCount,
+            attend_count AS attendCount,
+            fans_count AS fansCount,
+            collect_product_count AS collectProductCount,
+            collect_subject_count AS collectSubjectCount,
+            collect_comment_count AS collectCommentCount,
+            invite_friend_count AS inviteFriendCount,
+            del_flag AS delFlag
+            </sql>
+</mapper>

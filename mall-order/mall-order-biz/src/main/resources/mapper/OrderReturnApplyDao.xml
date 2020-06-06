@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.order.dao.OrderReturnApplyDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.order.api.entity.OrderReturnApplyEntity" id="orderReturnApplyMap">
+        <result property="id" column="id"/>
+        <result property="orderId" column="orderId"/>
+        <result property="skuId" column="skuId"/>
+        <result property="orderSn" column="orderSn"/>
+        <result property="createTime" column="createTime"/>
+        <result property="memberUsername" column="memberUsername"/>
+        <result property="returnAmount" column="returnAmount"/>
+        <result property="returnName" column="returnName"/>
+        <result property="returnPhone" column="returnPhone"/>
+        <result property="status" column="status"/>
+        <result property="handleTime" column="handleTime"/>
+        <result property="skuImg" column="skuImg"/>
+        <result property="skuName" column="skuName"/>
+        <result property="skuBrand" column="skuBrand"/>
+        <result property="skuAttrsVals" column="skuAttrsVals"/>
+        <result property="skuCount" column="skuCount"/>
+        <result property="skuPrice" column="skuPrice"/>
+        <result property="skuRealPrice" column="skuRealPrice"/>
+        <result property="reason" column="reason"/>
+        <result property="description述" column="description述"/>
+        <result property="descPics" column="descPics"/>
+        <result property="handleNote" column="handleNote"/>
+        <result property="handleMan" column="handleMan"/>
+        <result property="receiveMan" column="receiveMan"/>
+        <result property="receiveTime" column="receiveTime"/>
+        <result property="receiveNote" column="receiveNote"/>
+        <result property="receivePhone" column="receivePhone"/>
+        <result property="companyAddress" column="companyAddress"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            order_id AS orderId,
+            sku_id AS skuId,
+            order_sn AS orderSn,
+            create_time AS createTime,
+            member_username AS memberUsername,
+            return_amount AS returnAmount,
+            return_name AS returnName,
+            return_phone AS returnPhone,
+            status,
+            handle_time AS handleTime,
+            sku_img AS skuImg,
+            sku_name AS skuName,
+            sku_brand AS skuBrand,
+            sku_attrs_vals AS skuAttrsVals,
+            sku_count AS skuCount,
+            sku_price AS skuPrice,
+            sku_real_price AS skuRealPrice,
+            reason,
+            description述,
+            desc_pics AS descPics,
+            handle_note AS handleNote,
+            handle_man AS handleMan,
+            receive_man AS receiveMan,
+            receive_time AS receiveTime,
+            receive_note AS receiveNote,
+            receive_phone AS receivePhone,
+            company_address AS companyAddress,
+            del_flag AS delFlag
+            </sql>
+</mapper>

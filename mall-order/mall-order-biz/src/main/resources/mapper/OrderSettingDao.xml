@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hjht.mall.order.dao.OrderSettingDao">
+
+	<!-- 单表通用映射 -->
+    <resultMap type="com.hjht.mall.order.api.entity.OrderSettingEntity" id="orderSettingMap">
+        <result property="id" column="id"/>
+        <result property="flashOrderOvertime" column="flashOrderOvertime"/>
+        <result property="normalOrderOvertime" column="normalOrderOvertime"/>
+        <result property="confirmOvertime" column="confirmOvertime"/>
+        <result property="finishOvertime" column="finishOvertime"/>
+        <result property="commentOvertime" column="commentOvertime"/>
+        <result property="memberLevel" column="memberLevel"/>
+        <result property="delFlag" column="delFlag"/>
+    </resultMap>
+
+    <!-- 单表通用查询结果 -->
+    <sql id="BaseColumnList">
+            id,
+            flash_order_overtime AS flashOrderOvertime,
+            normal_order_overtime AS normalOrderOvertime,
+            confirm_overtime AS confirmOvertime,
+            finish_overtime AS finishOvertime,
+            comment_overtime AS commentOvertime,
+            member_level AS memberLevel,
+            del_flag AS delFlag
+            </sql>
+</mapper>
