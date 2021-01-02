@@ -5,11 +5,7 @@ package com.hjht.mall.three.api.constant;
  * @Created by ycl
  */
 public class ThreeCodeConstant {
-    /*accessKeyId: LTAI4GCHw2NptGYJnYspdDTF
-    accessKeySecret: LQgRnWTAdv4aTV6Nq7re3xnApNX12w
-    signName: 酷游娱助农分销平台
-    templateCode: SMS_191885039*/
-
+ 
     public static final String ACCESS_KEY_ID = "";
 
     public static final String ACCESS_KEY_SECRET = "";
